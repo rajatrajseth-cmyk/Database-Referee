@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Referee - MySQL vs MongoDB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 Database Referee</h1>
+            <p class="subtitle">MySQL vs MongoDB Decision Support Tool</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Tell us about your project</h2>
+                
+                <div class="form-group">
+                    <label for="project-size">Project Size:</label>
+                    <select id="project-size" class="form-control">
+                        <option value="">Select project size</option>
+                        <option value="small">Small (Personal/Prototype)</option>
+                        <option value="medium">Medium (Team/Startup)</option>
+                        <option value="large">Large (Enterprise)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="data-type">Data Type:</label>
+                    <select id="data-type" class="form-control">
+                        <option value="">Select data type</option>
+                        <option value="structured">Structured (Tables, Relations)</option>
+                        <option value="semi-structured">Semi-structured (JSON, Documents)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="scalability">Scalability Need:</label>
+                    <select id="scalability" class="form-control">
+                        <option value="">Select scalability need</option>
+                        <option value="low">Low (Thousands of users)</option>
+                        <option value="high">High (Millions of users)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Your Experience Level:</label>
+                    <select id="experience" class="form-control">
+                        <option value="">Select experience level</option>
+                        <option value="beginner">Beginner (New to databases)</option>
+                        <option value="advanced">Advanced (Database experience)</option>
+                    </select>
+                </div>
+
+                <button id="analyze-btn" class="analyze-btn">Analyze Options</button>
+            </div>
+
+            <div id="results" class="results-section" style="display: none;">
+                <div class="comparison-grid">
+                    <div class="database-card mysql-card">
+                        <h3>🐬 MySQL</h3>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>✅ Pros</h4>
+                                <ul id="mysql-pros"></ul>
+                            </div>
+                            <div class="cons">
+                                <h4>❌ Cons</h4>
+                                <ul id="mysql-cons"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="database-card mongodb-card">
+                        <h3>🍃 MongoDB</h3>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>✅ Pros</h4>
+                                <ul id="mongodb-pros"></ul>
+                            </div>
+                            <div class="cons">
+                                <h4>❌ Cons</h4>
+                                <ul id="mongodb-cons"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tradeoffs-section">
+                    <h3>⚖️ Key Trade-offs</h3>
+                    <div id="tradeoffs-content"></div>
+                </div>
+
+                <div class="recommendation-section">
+                    <h3>🎯 Neutral Recommendation</h3>
+                    <div id="recommendation-content"></div>
+                </div>
+
+                <button id="reset-btn" class="reset-btn">Start Over</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Kiro Week 6 Challenge - Built with HTML, CSS & JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
